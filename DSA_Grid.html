@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="A personal Striver A2Z study dashboard for internship interviews and online assessments."><title>DSA Grid</title><style>:root{color-scheme:dark;--bg:#0d1017;--panel:#151a24;--border:#282e3c;--muted:#a4adc0;--text:#f2f4fc;--accent:#b5a4ff;--violet:#7f60ec;--green:#76dfad;--amber:#ffc780;--red:#ffa5ac;font-family:Inter,system-ui,sans-serif;font-size:16px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text)}a{color:var(--accent);text-decoration:none}button,input,select,textarea{font:inherit}button,select{cursor:pointer}button,.button,select,input,textarea{color:var(--text);background:#1d2230;border:1px solid var(--border);border-radius:8px;padding:9px 13px}button:hover,.button:hover,select:hover{border-color:var(--accent)}:focus-visible{outline:2px solid var(--accent);outline-offset:3px}button.primary,.button.primary{background:#b6a5ff;color:#171228;border-color:#b6a5ff;font-weight:750}button:disabled{opacity:.45;cursor:default}aside{position:fixed;inset:0 auto 0 0;width:229px;background:#11151e;border-right:1px solid var(--border);padding:25px 16px 20px;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:11px;color:var(--text);font-size:19px;font-weight:750;padding:0 8px}.brand b,.avatar{display:grid;place-items:center;background:#322653;color:#c5b7ff;border-radius:10px;width:38px;height:38px}.brand small,.sidebar-end small{display:block;color:var(--muted);font-size:11px;letter-spacing:.13em;margin-top:3px}nav{margin-top:37px}nav p{font-size:11px;letter-spacing:.14em;color:var(--muted);padding-left:12px;font-weight:700}nav a,.sidebar-end a{display:block;padding:10px 12px;border-radius:8px;color:var(--muted);font-size:14px;margin:4px 0}nav a:hover,.sidebar-end a:hover,nav a[aria-current]{background:#26203b;color:#d3c6ff}i{font-style:normal}nav i{display:inline-block;width:24px}.sidebar-end{margin-top:auto}.sidebar-end small{letter-spacing:0;padding:10px 12px}.workspace{margin-left:229px}header{height:67px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--border);padding:0 32px;color:var(--muted);font-size:14px}header strong{color:var(--text)}.slash{margin:0 6px;color:#777f93}#date{margin-left:auto}.avatar{width:33px;height:33px;border-radius:50%;font-weight:700}main{max-width:1380px;margin:auto;padding:30px 32px 60px}h1,h2,h3,p{margin:0}h1{font-size:clamp(1.9rem,4vw,2.8rem);letter-spacing:-.05em}h2{font-size:1.15rem}h3{font-size:1rem}.sub{color:var(--muted);margin-top:7px;line-height:1.55}.eyebrow{color:#d1c4ff;font-size:12px;letter-spacing:.16em;font-weight:750;margin-bottom:10px}.hero{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:18px;background:radial-gradient(ellipse at 100% 0,#462f73,transparent 63%),linear-gradient(115deg,#1e1a32,#211b39);border:1px solid #49396d;border-radius:16px;padding:29px;margin-bottom:19px}.hero .sub{color:#ccc4e2}.hero .button{white-space:nowrap;position:relative}.stats,.split,.filters{display:grid;gap:14px}.stats{grid-template-columns:repeat(4,1fr);margin:16px 0}.split{grid-template-columns:1.35fr 1fr;margin:16px 0}.card,.metric{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:18px}.metric b{display:block;font-size:1.75rem;margin:7px 0 3px;letter-spacing:-.04em}.metric span,.muted,small{color:var(--muted)}.metric span,.muted{font-size:14px}.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.bar{height:8px;background:#2b3042;border-radius:10px;overflow:hidden;margin:12px 0}.bar i{display:block;height:100%;background:#a78cf8;border-radius:10px}.section{margin:23px 0 12px}.rows{margin-top:12px}.row{display:flex;gap:12px;align-items:center;padding:11px 0;border-top:1px solid var(--border)}.row:first-child{border-top:0}.row .grow{flex:1;min-width:0}.row small{display:block;margin-top:3px}.row select,.row button{font-size:14px}.tag{display:inline-block;font-size:13px;border-radius:6px;padding:4px 8px;background:#2b3040;white-space:nowrap}.easy{color:var(--green);background:#20382f}.medium{color:var(--amber);background:#382f26}.hard{color:var(--red);background:#392832}.empty{padding:18px 0;color:var(--muted);line-height:1.5}.filters{grid-template-columns:2fr repeat(3,1fr);margin:19px 0}.filters>*{min-width:0}.charts{display:grid;grid-template-columns:repeat(7,1fr);gap:9px;text-align:center;align-items:end;margin-top:17px}.charts .track{height:72px;display:flex;align-items:end;background:#202535;border-radius:7px;margin:4px 0}.charts i{width:100%;background:#9d82f0;border-radius:6px}.plan a{color:var(--text);font-weight:650}.plan a:hover{color:var(--accent)}.timer{font-variant-numeric:tabular-nums;font-size:2.3rem;color:var(--accent);font-weight:750}.form{display:flex;gap:13px;flex-wrap:wrap;align-items:end;margin:14px 0}.form label,dialog label{display:grid;gap:7px}.form input{width:110px}dialog{background:var(--panel);border:1px solid var(--border);border-radius:14px;color:var(--text);width:min(94vw,540px);padding:22px}dialog::backdrop{background:#050711bd}dialog form{display:grid;gap:13px}textarea{width:100%;min-height:90px;resize:vertical}#notice{position:fixed;bottom:18px;right:18px;background:#30274b;border-radius:8px;padding:10px 16px}#notice:empty{display:none}.note{white-space:pre-wrap;overflow-wrap:anywhere}.topic{font-size:14px;color:var(--muted)}.pagination{margin-top:16px}.phase{color:#c8b9ff;font-size:13px;margin-bottom:7px}.count{font-variant-numeric:tabular-nums}button.link{background:transparent;border:0;color:var(--accent);padding:4px}.footer{margin-top:20px;font-size:13px;color:var(--muted)}@media(max-width:1100px){.split{grid-template-columns:1fr}.metric{padding:13px}}@media(max-width:760px){aside{position:static;width:auto;padding:11px 13px;display:block;border-right:0;border-bottom:1px solid var(--border)}nav{margin:8px 0 0;display:flex;gap:3px;overflow:auto}nav p,nav i,.sidebar-end small{display:none}nav a{white-space:nowrap;padding:8px}.sidebar-end{display:flex}.sidebar-end a{padding:5px 8px;margin:1px 0}.workspace{margin:0}header{height:48px;padding:0 15px}main{padding:18px 14px 40px}.hero{padding:18px;align-items:flex-start;flex-direction:column}.stats,.filters{grid-template-columns:repeat(2,minmax(0,1fr))}.row{flex-wrap:wrap}.row .grow{flex-basis:55%}}@media(max-width:365px){#date{display:none}.avatar{margin-left:auto}}
+</style></head>
+<body><aside><a class="brand" href="#dashboard"><b>⌘</b><span>DSA Grid<small>INTERVIEW PREP</small></span></a><nav aria-label="Workspace"><p>WORKSPACE</p><a href="#dashboard"><i>◫</i> Overview</a><a href="#sheet"><i>▤</i> Problem Sheet</a><a href="#revision"><i>◷</i> Revision Queue</a><a href="#practice"><i>◴</i> Timed Practice</a><a href="#mistakes"><i>◇</i> Mistake Log</a></nav><div class="sidebar-end"><a href="https://takeuforward.org/prep-hub/strivers-a2z-dsa-sheet" target="_blank" rel="noopener">Official A2Z sheet ↗</a><a href="#settings">⚙ &nbsp; Practice Settings</a><small>Progress saved in this browser</small></div></aside><div class="workspace"><header><span>My workspace <span class="slash">/</span> <strong id="crumb">Overview</strong></span><span id="date"></span><span class="avatar" aria-label="Naksh">N</span></header><main id="app"></main></div><dialog id="dialog"></dialog><div id="notice" role="status"></div><script>const TOPICS = ["Foundations","Sorting","Arrays","Binary Search","Strings","Linked Lists","Recursion & Backtracking","Bit Manipulation","Stacks & Queues","Sliding Window & Two Pointers","Heaps","Greedy","Binary Trees","Binary Search Trees","Graphs","Dynamic Programming","Tries","Advanced Strings","Maths","Hashing"];
+const CATALOG = [[0,"Things to Know in C++/Java/Python","User Input / Output","Easy"],[0,"Things to Know in C++/Java/Python","Data Types","Easy"],[0,"Things to Know in C++/Java/Python","If Else statements","Easy"],[0,"Things to Know in C++/Java/Python","Switch Statement","Easy"],[0,"Things to Know in C++/Java/Python","What are arrays, strings?","Easy"],[0,"Things to Know in C++/Java/Python","For loops","Easy"],[0,"Things to Know in C++/Java/Python","While loops","Easy"],[0,"Things to Know in C++/Java/Python","Functions (Pass by Reference and Value)","Easy"],[0,"Things to Know in C++/Java/Python","Time Complexity","Easy"],[0,"Build-up Logical Thinking","Patterns","Easy"],[0,"Learn STL/Java Collections","C++ STL","Easy"],[0,"Learn STL/Java Collections","Java Collections","Easy"],[0,"Know Basic Maths","Count Digits","Easy"],[0,"Know Basic Maths","Reverse a Number","Easy"],[0,"Know Basic Maths","Check Palindrome","Easy"],[0,"Know Basic Maths","GCD Or HCF","Easy"],[0,"Know Basic Maths","Armstrong Numbers","Easy"],[0,"Know Basic Maths","Print all Divisors","Easy"],[0,"Know Basic Maths","Check for Prime","Easy"],[0,"Learn Basic Recursion","Understand recursion by print something N times","Easy"],[0,"Learn Basic Recursion","Print name N times using recursion","Easy"],[0,"Learn Basic Recursion","Print 1 to N using recursion","Easy"],[0,"Learn Basic Recursion","Print N to 1 using recursion","Easy"],[0,"Learn Basic Recursion","Sum of first N numbers","Easy"],[0,"Learn Basic Recursion","Factorial of N numbers","Easy"],[0,"Learn Basic Recursion","Reverse an array","Easy"],[0,"Learn Basic Recursion","Check if a string is palindrome or not","Easy"],[0,"Learn Basic Recursion","Fibonacci Number","Easy"],[0,"Learn Basic Hashing","Hashing Theory","Easy"],[0,"Learn Basic Hashing","Counting frequencies of array elements","Easy"],[0,"Learn Basic Hashing","Find the highest/lowest frequency element","Easy"],[1,"Sorting-I","Selection Sort","Easy"],[1,"Sorting-I","Bubble Sort","Easy"],[1,"Sorting-I","Insertion Sort","Easy"],[1,"Sorting-II","Merge Sort","Easy"],[1,"Sorting-II","Recursive Bubble Sort","Easy"],[1,"Sorting-II","Recursive Insertion Sort","Easy"],[1,"Sorting-II","Quick Sort","Easy"],[2,"Easy","Largest Element in an Array","Easy"],[2,"Easy","Second Largest Element in an Array","Easy"],[2,"Easy","Check if array is sorted","Easy"],[2,"Easy","Remove duplicates from Sorted array","Easy"],[2,"Easy","Left Rotate an array by one place","Easy"],[2,"Easy","Left rotate an array by D places","Easy"],[2,"Easy","Move Zeros to end","Easy"],[2,"Easy","Linear Search","Easy"],[2,"Easy","Find the Union","Easy"],[2,"Easy","Find missing number in array","Easy"],[2,"Easy","Maximum Consecutive Ones","Easy"],[2,"Easy","Find the number appearing once","Easy"],[2,"Easy","Longest subarray with given sum K (positives)","Easy"],[2,"Easy","Longest subarray with sum K (Positives + Negatives)","Easy"],[2,"Medium","2Sum Problem","Medium"],[2,"Medium","Sort an array of 0's 1's and 2's","Medium"],[2,"Medium","Majority Element (>n/2 times)","Medium"],[2,"Medium","Kadane's Algorithm","Medium"],[2,"Medium","Print subarray with maximum sum","Medium"],[2,"Medium","Stock Buy and Sell","Medium"],[2,"Medium","Rearrange array elements","Medium"],[2,"Medium","Next Permutation","Medium"],[2,"Medium","Leaders in an Array","Medium"],[2,"Medium","Longest Consecutive Sequence","Medium"],[2,"Medium","Set Matrix Zeros","Medium"],[2,"Medium","Rotate Matrix by 90 degrees","Medium"],[2,"Medium","Print matrix in spiral manner","Medium"],[2,"Medium","Count subarrays with given sum","Medium"],[2,"Hard","Pascal's Triangle","Hard"],[2,"Hard","Majority Element (n/3 times)","Hard"],[2,"Hard","3-Sum Problem","Hard"],[2,"Hard","4-Sum Problem","Hard"],[2,"Hard","Largest Subarray with 0 Sum","Hard"],[2,"Hard","Count subarrays with given XOR","Hard"],[2,"Hard","Merge Overlapping Subintervals","Hard"],[2,"Hard","Merge two sorted arrays","Hard"],[2,"Hard","Find repeating and missing number","Hard"],[2,"Hard","Count Inversions","Hard"],[2,"Hard","Reverse Pairs","Hard"],[2,"Hard","Maximum Product Subarray","Hard"],[3,"BS on 1D Arrays","Binary Search to find X","Unrated"],[3,"BS on 1D Arrays","Implement Lower Bound","Unrated"],[3,"BS on 1D Arrays","Implement Upper Bound","Unrated"],[3,"BS on 1D Arrays","Search Insert Position","Unrated"],[3,"BS on 1D Arrays","Floor/Ceil in Sorted Array","Unrated"],[3,"BS on 1D Arrays","First and Last Occurrences","Unrated"],[3,"BS on 1D Arrays","Count occurrences in sorted array","Unrated"],[3,"BS on 1D Arrays","Search in Rotated Sorted Array I","Unrated"],[3,"BS on 1D Arrays","Search in Rotated Sorted Array II","Unrated"],[3,"BS on 1D Arrays","Find minimum in Rotated Sorted Array","Unrated"],[3,"BS on 1D Arrays","Number of times array is rotated","Unrated"],[3,"BS on 1D Arrays","Single element in Sorted Array","Unrated"],[3,"BS on 1D Arrays","Find peak element","Unrated"],[3,"BS on Answers","Square Root using Binary Search","Unrated"],[3,"BS on Answers","Find Nth Root","Unrated"],[3,"BS on Answers","Koko Eating Bananas","Unrated"],[3,"BS on Answers","Minimum days to make M bouquets","Unrated"],[3,"BS on Answers","Smallest Divisor","Unrated"],[3,"BS on Answers","Capacity To Ship Packages","Unrated"],[3,"BS on Answers","Kth Missing Positive Number","Unrated"],[3,"BS on Answers","Aggressive Cows","Unrated"],[3,"BS on Answers","Book Allocation Problem","Unrated"],[3,"BS on Answers","Split Array - Largest Sum","Unrated"],[3,"BS on Answers","Painter's Partition","Unrated"],[3,"BS on Answers","Minimize Max Distance to Gas Station","Unrated"],[3,"BS on Answers","Median of 2 sorted arrays","Unrated"],[3,"BS on Answers","Kth element of 2 sorted arrays","Unrated"],[3,"BS on 2D Arrays","Row with maximum number of 1's","Unrated"],[3,"BS on 2D Arrays","Search in a 2D matrix","Unrated"],[3,"BS on 2D Arrays","Search in row-column sorted matrix","Unrated"],[3,"BS on 2D Arrays","Find Peak Element (2D)","Unrated"],[3,"BS on 2D Arrays","Matrix Median","Unrated"],[4,"Basic and Easy String Problems","Remove Outermost Parenthesis","Easy"],[4,"Basic and Easy String Problems","Reverse Words/Palindrome Check","Easy"],[4,"Basic and Easy String Problems","Largest Odd Number in String","Easy"],[4,"Basic and Easy String Problems","Longest Common Prefix","Easy"],[4,"Basic and Easy String Problems","Isomorphic Strings","Easy"],[4,"Basic and Easy String Problems","Check for Rotation","Easy"],[4,"Basic and Easy String Problems","Check for Anagram","Easy"],[4,"Medium String Problems","Sort Characters by Frequency","Medium"],[4,"Medium String Problems","Maximum Nesting Depth","Medium"],[4,"Medium String Problems","Roman Number Conversions","Medium"],[4,"Medium String Problems","Implement Atoi","Medium"],[4,"Medium String Problems","Count Number of Substrings","Medium"],[4,"Medium String Problems","Longest Palindromic Substring","Medium"],[4,"Medium String Problems","Sum of Beauty of Substrings","Medium"],[4,"Medium String Problems","Reverse Words in String","Medium"],[5,"1D LinkedList","Introduction to LinkedList","Unrated"],[5,"1D LinkedList","Inserting a node","Unrated"],[5,"1D LinkedList","Deleting a node","Unrated"],[5,"1D LinkedList","Find length of LL","Unrated"],[5,"1D LinkedList","Search in LL","Unrated"],[5,"Doubly LinkedList","Introduction to DLL","Unrated"],[5,"Doubly LinkedList","Insert in DLL","Unrated"],[5,"Doubly LinkedList","Delete in DLL","Unrated"],[5,"Doubly LinkedList","Reverse DLL","Unrated"],[5,"Medium LL Problems","Middle of LinkedList","Medium"],[5,"Medium LL Problems","Reverse LL (Iterative)","Medium"],[5,"Medium LL Problems","Reverse LL (Recursive)","Medium"],[5,"Medium LL Problems","Detect Loop","Medium"],[5,"Medium LL Problems","Find starting point of Loop","Medium"],[5,"Medium LL Problems","Length of Loop","Medium"],[5,"Medium LL Problems","Check Palindrome","Medium"],[5,"Medium LL Problems","Segregate odd and even","Medium"],[5,"Medium LL Problems","Remove Nth node from end","Medium"],[5,"Medium LL Problems","Delete middle node","Medium"],[5,"Medium LL Problems","Sort LL","Medium"],[5,"Medium LL Problems","Sort 0s, 1s and 2s","Medium"],[5,"Medium LL Problems","Find intersection point","Medium"],[5,"Medium LL Problems","Add 1 to LL","Medium"],[5,"Medium LL Problems","Add two numbers in LL","Medium"],[5,"Medium DLL Problems","Delete all occurrences","Medium"],[5,"Medium DLL Problems","Find pairs with given sum","Medium"],[5,"Medium DLL Problems","Remove duplicates","Medium"],[5,"Hard Problems","Reverse LL in groups","Hard"],[5,"Hard Problems","Rotate LL","Hard"],[5,"Hard Problems","Flattening of LL","Hard"],[5,"Hard Problems","Clone LL with random pointer","Hard"],[6,"Get Strong Hold","Recursive Implementation of atoi()","Unrated"],[6,"Get Strong Hold","Pow(x, n)","Unrated"],[6,"Get Strong Hold","Count Good numbers","Unrated"],[6,"Get Strong Hold","Sort a stack","Unrated"],[6,"Get Strong Hold","Reverse a stack","Unrated"],[6,"Subsequences Pattern","Generate binary strings","Unrated"],[6,"Subsequences Pattern","Generate Parentheses","Unrated"],[6,"Subsequences Pattern","Print all subsequences","Unrated"],[6,"Subsequences Pattern","All Subsequence Patterns","Unrated"],[6,"Subsequences Pattern","Count subsequences with sum K","Unrated"],[6,"Subsequences Pattern","Check subsequence with sum K","Unrated"],[6,"Subsequences Pattern","Combination Sum","Unrated"],[6,"Subsequences Pattern","Combination Sum II","Unrated"],[6,"Subsequences Pattern","Subset Sum I","Unrated"],[6,"Subsequences Pattern","Subset Sum II","Unrated"],[6,"Subsequences Pattern","Combination Sum III","Unrated"],[6,"Subsequences Pattern","Letter Combinations","Unrated"],[6,"Hard Recursion Problems","Palindrome Partitioning","Hard"],[6,"Hard Recursion Problems","Word Search","Hard"],[6,"Hard Recursion Problems","N Queen","Hard"],[6,"Hard Recursion Problems","Rat in a Maze","Hard"],[6,"Hard Recursion Problems","Word Break","Hard"],[6,"Hard Recursion Problems","M Coloring","Hard"],[6,"Hard Recursion Problems","Sudoku Solver","Hard"],[6,"Hard Recursion Problems","Expression Add Operators","Hard"],[7,"Bit Manipulation","Introduction to Bits","Unrated"],[7,"Bit Manipulation","Check i-th bit","Unrated"],[7,"Bit Manipulation","Check odd/even","Unrated"],[7,"Bit Manipulation","Check power of 2","Unrated"],[7,"Bit Manipulation","Count set bits","Unrated"],[7,"Bit Manipulation","Set/Unset rightmost bit","Unrated"],[7,"Bit Manipulation","Swap numbers","Unrated"],[7,"Bit Manipulation","Divide integers","Unrated"],[7,"Interview Problems","Count bits to be flipped","Unrated"],[7,"Interview Problems","Find odd occurring number","Unrated"],[7,"Interview Problems","Power Set","Unrated"],[7,"Interview Problems","XOR from L to R","Unrated"],[7,"Interview Problems","Two numbers with odd occurrences","Unrated"],[7,"Advanced Maths","Prime Factors","Unrated"],[7,"Advanced Maths","All Divisors","Unrated"],[7,"Advanced Maths","Sieve of Eratosthenes","Unrated"],[7,"Advanced Maths","Prime Factorisation using Sieve","Unrated"],[7,"Advanced Maths","Power(n, x)","Unrated"],[8,"Learning","Implement Stack using Arrays","Easy"],[8,"Learning","Implement Queue using Arrays","Easy"],[8,"Learning","Implement Stack using Queue","Easy"],[8,"Learning","Implement Queue using Stack","Easy"],[8,"Learning","Implement Stack using LinkedList","Easy"],[8,"Learning","Implement Queue using LinkedList","Easy"],[8,"Learning","Check Balanced Parentheses","Easy"],[8,"Learning","Implement Min Stack","Easy"],[8,"Prefix, Infix, Postfix","Infix to Postfix","Unrated"],[8,"Prefix, Infix, Postfix","Prefix to Infix","Unrated"],[8,"Prefix, Infix, Postfix","Prefix to Postfix","Unrated"],[8,"Prefix, Infix, Postfix","Postfix to Prefix","Unrated"],[8,"Prefix, Infix, Postfix","Postfix to Infix","Unrated"],[8,"Prefix, Infix, Postfix","Infix to Prefix","Unrated"],[8,"Monotonic Stack/Queue Problems","Next Greater Element","Unrated"],[8,"Monotonic Stack/Queue Problems","Next Greater Element II","Unrated"],[8,"Monotonic Stack/Queue Problems","Next Smaller Element","Unrated"],[8,"Monotonic Stack/Queue Problems","Number of NGEs to the right","Unrated"],[8,"Monotonic Stack/Queue Problems","Trapping Rainwater","Unrated"],[8,"Monotonic Stack/Queue Problems","Sum of Subarray Minimum","Unrated"],[8,"Monotonic Stack/Queue Problems","Asteroid Collision","Unrated"],[8,"Monotonic Stack/Queue Problems","Sum of Subarray Ranges","Unrated"],[8,"Monotonic Stack/Queue Problems","Remove K Digits","Unrated"],[8,"Monotonic Stack/Queue Problems","Largest Rectangle in Histogram","Unrated"],[8,"Monotonic Stack/Queue Problems","Maximal Rectangles","Unrated"],[8,"Implementation Problems","Sliding Window Maximum","Unrated"],[8,"Implementation Problems","Stock Span Problem","Unrated"],[8,"Implementation Problems","Celebrity Problem","Unrated"],[8,"Implementation Problems","LRU Cache","Unrated"],[8,"Implementation Problems","LFU Cache","Unrated"],[9,"Medium Problems","Longest Substring Without Repeating Characters","Medium"],[9,"Medium Problems","Max Consecutive Ones III","Medium"],[9,"Medium Problems","Fruit Into Baskets","Medium"],[9,"Medium Problems","Longest Repeating Character Replacement","Medium"],[9,"Medium Problems","Binary Subarray with Sum","Medium"],[9,"Medium Problems","Count Nice Subarrays","Medium"],[9,"Medium Problems","Number of Substring Containing All Characters","Medium"],[9,"Medium Problems","Maximum Points from Cards","Medium"],[9,"Hard Problems","Longest Substring with K Distinct Characters","Hard"],[9,"Hard Problems","Subarray with K Different Integers","Hard"],[9,"Hard Problems","Minimum Window Substring","Hard"],[9,"Hard Problems","Minimum Window Subsequence","Hard"],[10,"Learning","Introduction to Priority Queues","Easy"],[10,"Learning","Min/Max Heap Implementation","Easy"],[10,"Learning","Check if Array is Min-Heap","Easy"],[10,"Learning","Convert Min to Max Heap","Easy"],[10,"Medium Problems","Kth Largest Element","Medium"],[10,"Medium Problems","Kth Smallest Element","Medium"],[10,"Medium Problems","Sort K Sorted Array","Medium"],[10,"Medium Problems","Merge M Sorted Lists","Medium"],[10,"Medium Problems","Replace Elements by Rank","Medium"],[10,"Medium Problems","Task Scheduler","Medium"],[10,"Medium Problems","Hands of Straights","Medium"],[10,"Hard Problems","Design Twitter","Hard"],[10,"Hard Problems","Connect N Ropes","Hard"],[10,"Hard Problems","Kth Largest in Stream","Hard"],[10,"Hard Problems","Maximum Sum Combination","Hard"],[10,"Hard Problems","Find Median from Data Stream","Hard"],[10,"Hard Problems","K Most Frequent Elements","Hard"],[11,"Easy Problems","Assign Cookies","Easy"],[11,"Easy Problems","Fractional Knapsack","Easy"],[11,"Easy Problems","Minimum Coins","Easy"],[11,"Easy Problems","Lemonade Change","Easy"],[11,"Easy Problems","Valid Parenthesis","Easy"],[11,"Medium/Hard Problems","N Meetings in One Room","Medium"],[11,"Medium/Hard Problems","Jump Game","Medium"],[11,"Medium/Hard Problems","Jump Game II","Medium"],[11,"Medium/Hard Problems","Minimum Platforms","Medium"],[11,"Medium/Hard Problems","Job Sequencing","Medium"],[11,"Medium/Hard Problems","Candy Distribution","Medium"],[11,"Medium/Hard Problems","Shortest Job First","Medium"],[11,"Medium/Hard Problems","LRU Page Replacement","Medium"],[11,"Medium/Hard Problems","Insert Interval","Medium"],[11,"Medium/Hard Problems","Merge Intervals","Medium"],[11,"Medium/Hard Problems","Non-overlapping Intervals","Medium"],[12,"Traversals","Introduction to Trees","Unrated"],[12,"Traversals","Binary Tree in C++","Unrated"],[12,"Traversals","Binary Tree in Java","Unrated"],[12,"Traversals","Tree Traversals","Unrated"],[12,"Traversals","Preorder Traversal","Unrated"],[12,"Traversals","Inorder Traversal","Unrated"],[12,"Traversals","Postorder Traversal","Unrated"],[12,"Traversals","Level Order Traversal","Unrated"],[12,"Traversals","Iterative Preorder","Unrated"],[12,"Traversals","Iterative Inorder","Unrated"],[12,"Traversals","Postorder using 2 Stacks","Unrated"],[12,"Traversals","Postorder using 1 Stack","Unrated"],[12,"Traversals","All Traversals in One Go","Unrated"],[12,"Medium Problems","Height of Binary Tree","Medium"],[12,"Medium Problems","Check Balanced Tree","Medium"],[12,"Medium Problems","Diameter of Tree","Medium"],[12,"Medium Problems","Maximum Path Sum","Medium"],[12,"Medium Problems","Check Identical Trees","Medium"],[12,"Medium Problems","Zigzag Traversal","Medium"],[12,"Medium Problems","Boundary Traversal","Medium"],[12,"Medium Problems","Vertical Order Traversal","Medium"],[12,"Medium Problems","Top View","Medium"],[12,"Medium Problems","Bottom View","Medium"],[12,"Medium Problems","Right/Left View","Medium"],[12,"Medium Problems","Symmetric Tree","Medium"],[12,"Hard Problems","Root to Node Path","Hard"],[12,"Hard Problems","LCA in Binary Tree","Hard"],[12,"Hard Problems","Maximum Width","Hard"],[12,"Hard Problems","Children Sum Property","Hard"],[12,"Hard Problems","Nodes at Distance K","Hard"],[12,"Hard Problems","Burn Binary Tree","Hard"],[12,"Hard Problems","Count Total Nodes","Hard"],[12,"Hard Problems","Requirements for Unique Tree","Hard"],[12,"Hard Problems","Construct from Inorder/Preorder","Hard"],[12,"Hard Problems","Construct from Postorder/Inorder","Hard"],[12,"Hard Problems","Serialize and Deserialize","Hard"],[12,"Hard Problems","Morris Preorder","Hard"],[12,"Hard Problems","Morris Inorder","Hard"],[12,"Hard Problems","Flatten to LinkedList","Hard"],[13,"Concepts","Introduction to BST","Unrated"],[13,"Concepts","Search in BST","Unrated"],[13,"Concepts","Find Min/Max in BST","Unrated"],[13,"Practice Problems","Ceil in BST","Unrated"],[13,"Practice Problems","Floor in BST","Unrated"],[13,"Practice Problems","Insert Node in BST","Unrated"],[13,"Practice Problems","Delete Node in BST","Unrated"],[13,"Practice Problems","K-th Smallest/Largest in BST","Unrated"],[13,"Practice Problems","Check if Tree is BST","Unrated"],[13,"Practice Problems","LCA in BST","Unrated"],[13,"Practice Problems","Construct BST from Preorder","Unrated"],[13,"Practice Problems","Inorder Successor/Predecessor","Unrated"],[13,"Practice Problems","Merge 2 BSTs","Unrated"],[13,"Practice Problems","Two Sum in BST","Unrated"],[13,"Practice Problems","Recover BST","Unrated"],[13,"Practice Problems","Largest BST in Binary Tree","Unrated"],[14,"Learning","Graph and Types","Easy"],[14,"Learning","Graph Representation C++","Easy"],[14,"Learning","Graph Representation Java","Easy"],[14,"Learning","Connected Components","Easy"],[14,"Learning","BFS","Easy"],[14,"Learning","DFS","Easy"],[14,"Problems on BFS/DFS","Number of Provinces","Unrated"],[14,"Problems on BFS/DFS","Connected Components in Matrix","Unrated"],[14,"Problems on BFS/DFS","Rotten Oranges","Unrated"],[14,"Problems on BFS/DFS","Flood Fill","Unrated"],[14,"Problems on BFS/DFS","Cycle Detection (BFS)","Unrated"],[14,"Problems on BFS/DFS","Cycle Detection (DFS)","Unrated"],[14,"Problems on BFS/DFS","0/1 Matrix","Unrated"],[14,"Problems on BFS/DFS","Surrounded Regions","Unrated"],[14,"Problems on BFS/DFS","Number of Enclaves","Unrated"],[14,"Problems on BFS/DFS","Word Ladder I","Unrated"],[14,"Problems on BFS/DFS","Word Ladder II","Unrated"],[14,"Problems on BFS/DFS","Number of Distinct Islands","Unrated"],[14,"Problems on BFS/DFS","Bipartite Graph","Unrated"],[14,"Problems on BFS/DFS","Cycle Detection in Directed Graph","Unrated"],[14,"Topo Sort and Problems","Topological Sort","Unrated"],[14,"Topo Sort and Problems","Kahn's Algorithm","Unrated"],[14,"Topo Sort and Problems","Cycle Detection (BFS)","Unrated"],[14,"Topo Sort and Problems","Course Schedule I","Unrated"],[14,"Topo Sort and Problems","Course Schedule II","Unrated"],[14,"Topo Sort and Problems","Find Eventual Safe States","Unrated"],[14,"Topo Sort and Problems","Alien Dictionary","Unrated"],[14,"Shortest Path Algorithms","Shortest Path in Unweighted Graph","Unrated"],[14,"Shortest Path Algorithms","Shortest Path in DAG","Unrated"],[14,"Shortest Path Algorithms","Dijkstra's Algorithm","Unrated"],[14,"Shortest Path Algorithms","Why Priority Queue in Dijkstra","Unrated"],[14,"Shortest Path Algorithms","Shortest Path in Binary Maze","Unrated"],[14,"Shortest Path Algorithms","Path with Minimum Effort","Unrated"],[14,"Shortest Path Algorithms","Cheapest Flights within K Stops","Unrated"],[14,"Shortest Path Algorithms","Network Delay Time","Unrated"],[14,"Shortest Path Algorithms","Number of Ways to Destination","Unrated"],[14,"Shortest Path Algorithms","Minimum Steps to End","Unrated"],[14,"Shortest Path Algorithms","Bellman Ford Algorithm","Unrated"],[14,"Shortest Path Algorithms","Floyd Warshall Algorithm","Unrated"],[14,"Shortest Path Algorithms","City With Smallest Neighbors","Unrated"],[14,"MST/Disjoint Set","Minimum Spanning Tree","Unrated"],[14,"MST/Disjoint Set","Prim's Algorithm","Unrated"],[14,"MST/Disjoint Set","Disjoint Set (Union by Rank)","Unrated"],[14,"MST/Disjoint Set","Disjoint Set (Union by Size)","Unrated"],[14,"MST/Disjoint Set","Kruskal's Algorithm","Unrated"],[14,"MST/Disjoint Set","Number of Operations for Network","Unrated"],[14,"MST/Disjoint Set","Most Stones Removed","Unrated"],[14,"MST/Disjoint Set","Accounts Merge","Unrated"],[14,"MST/Disjoint Set","Number of Islands II","Unrated"],[14,"MST/Disjoint Set","Making Large Island","Unrated"],[14,"MST/Disjoint Set","Swim in Rising Water","Unrated"],[14,"Other Algorithms","Bridges in Graph","Unrated"],[14,"Other Algorithms","Articulation Point","Unrated"],[14,"Other Algorithms","Kosaraju's Algorithm","Unrated"],[15,"Introduction","Dynamic Programming Introduction","Easy"],[15,"1D DP","Climbing Stairs","Unrated"],[15,"1D DP","Frog Jump","Unrated"],[15,"1D DP","Frog Jump with K Distance","Unrated"],[15,"1D DP","Maximum Sum of Non-Adjacent Elements","Unrated"],[15,"1D DP","House Robber","Unrated"],[15,"2D/3D DP and DP on Grids","Ninja's Training","Unrated"],[15,"2D/3D DP and DP on Grids","Grid Unique Paths","Unrated"],[15,"2D/3D DP and DP on Grids","Grid Unique Paths 2","Unrated"],[15,"2D/3D DP and DP on Grids","Minimum Path Sum in Grid","Unrated"],[15,"2D/3D DP and DP on Grids","Minimum Path Sum in Triangle","Unrated"],[15,"2D/3D DP and DP on Grids","Maximum Falling Path Sum","Unrated"],[15,"2D/3D DP and DP on Grids","3D DP - Ninja and Friends","Unrated"],[15,"DP on Subsequences","Subset Sum Equal to Target","Unrated"],[15,"DP on Subsequences","Partition Equal Subset Sum","Unrated"],[15,"DP on Subsequences","Partition Set Into 2 Subsets","Unrated"],[15,"DP on Subsequences","Count Subsets with Sum K","Unrated"],[15,"DP on Subsequences","Count Partitions with Difference","Unrated"],[15,"DP on Subsequences","Assign Cookies","Unrated"],[15,"DP on Subsequences","Minimum Coins","Unrated"],[15,"DP on Subsequences","Target Sum","Unrated"],[15,"DP on Subsequences","Coin Change 2","Unrated"],[15,"DP on Subsequences","Unbounded Knapsack","Unrated"],[15,"DP on Subsequences","Rod Cutting Problem","Unrated"],[15,"DP on Strings","Longest Common Subsequence","Unrated"],[15,"DP on Strings","Print LCS","Unrated"],[15,"DP on Strings","Longest Common Substring","Unrated"],[15,"DP on Strings","Longest Palindromic Subsequence","Unrated"],[15,"DP on Strings","Minimum Insertions for Palindrome","Unrated"],[15,"DP on Strings","Minimum Insertions/Deletions","Unrated"],[15,"DP on Strings","Shortest Common Supersequence","Unrated"],[15,"DP on Strings","Distinct Subsequences","Unrated"],[15,"DP on Strings","Edit Distance","Unrated"],[15,"DP on Strings","Wildcard Matching","Unrated"],[15,"DP on Stocks","Best Time to Buy and Sell Stock","Unrated"],[15,"DP on Stocks","Buy and Sell Stock II","Unrated"],[15,"DP on Stocks","Buy and Sell Stock III","Unrated"],[15,"DP on Stocks","Buy and Sell Stock IV","Unrated"],[15,"DP on Stocks","Buy and Sell with Cooldown","Unrated"],[15,"DP on Stocks","Buy and Sell with Transaction Fee","Unrated"],[15,"DP on LIS","Longest Increasing Subsequence","Unrated"],[15,"DP on LIS","Print LIS","Unrated"],[15,"DP on LIS","Longest Increasing Subsequence Binary Search","Unrated"],[15,"DP on LIS","Largest Divisible Subset","Unrated"],[15,"DP on LIS","Longest String Chain","Unrated"],[15,"DP on LIS","Longest Bitonic Subsequence","Unrated"],[15,"DP on LIS","Number of LIS","Unrated"],[15,"MCM DP","Matrix Chain Multiplication","Unrated"],[15,"MCM DP","MCM Bottom-Up","Unrated"],[15,"MCM DP","Minimum Cost to Cut Stick","Unrated"],[15,"MCM DP","Burst Balloons","Unrated"],[15,"MCM DP","Evaluate Boolean Expression","Unrated"],[15,"MCM DP","Palindrome Partitioning II","Unrated"],[15,"MCM DP","Partition Array for Maximum Sum","Unrated"],[15,"DP on Squares","Maximum Rectangle Area","Unrated"],[15,"DP on Squares","Count Square Submatrices","Unrated"],[16,"Theory","Implement TRIE","Unrated"],[16,"Problems","Implement Trie II","Unrated"],[16,"Problems","Longest String with All Prefixes","Unrated"],[16,"Problems","Number of Distinct Substrings","Unrated"],[16,"Problems","Bit Prerequisites","Unrated"],[16,"Problems","Maximum XOR of Two Numbers","Unrated"],[16,"Problems","Maximum XOR With Element","Unrated"],[17,"Hard Problems","Minimum Bracket Reversals","Hard"],[17,"Hard Problems","Count and Say","Hard"],[17,"Hard Problems","Hashing in Strings","Hard"],[17,"Hard Problems","Rabin Karp","Hard"],[17,"Hard Problems","Z-Function","Hard"],[17,"Hard Problems","KMP Algorithm","Hard"],[17,"Hard Problems","Shortest Palindrome","Hard"],[17,"Hard Problems","Longest Happy Prefix","Hard"],[17,"Hard Problems","Count Palindromic Subsequences","Hard"],[18,"Number theory","Sieve of Eratosthenes","Easy"],[18,"Number theory","Prime factorization","Medium"],[18,"Modular arithmetic","Modular exponentiation","Medium"],[19,"Hash maps","Contains Duplicate","Easy"],[19,"Hash maps","Group Anagrams","Medium"],[19,"Hash maps","Top K Frequent Elements","Medium"]];
+
+"use strict";
+
+const official = "https://takeuforward.org/prep-hub/strivers-a2z-dsa-sheet";
+const questionLinks = {
+  "2Sum Problem":"two-sum", "3-Sum Problem":"3sum", "4-Sum Problem":"4sum",
+  "Move Zeros to end":"move-zeroes", "Kadane's Algorithm":"maximum-subarray",
+  "Next Permutation":"next-permutation", "Longest Consecutive Sequence":"longest-consecutive-sequence",
+  "Set Matrix Zeros":"set-matrix-zeroes", "Reverse Pairs":"reverse-pairs",
+  "Koko Eating Bananas":"koko-eating-bananas", "N Queens":"n-queens",
+  "Contains Duplicate":"contains-duplicate", "Group Anagrams":"group-anagrams",
+  "Top K Frequent Elements":"top-k-frequent-elements"
+};
+const rows = CATALOG.map(([topic, section, title, difficulty], id) => ({
+  id, title, section, topic: TOPICS[topic], difficulty, extra: topic >= 18,
+  url: questionLinks[title] ? "https://leetcode.com/problems/" + questionLinks[title] + "/" :
+    "https://www.google.com/search?q=" + encodeURIComponent(title + " takeUforward Striver A2Z")
+}));
+const statusNames = ["Not started", "Attempted", "Solved", "Needs revision"];
+const screens = {dashboard:"Overview",sheet:"Problem Sheet",revision:"Revision Queue",practice:"Timed Practice",mistakes:"Mistake Log",settings:"Practice Settings"};
+const key = "dsa-grid-v1";
+const blank = { records:{}, activity:{}, notes:[], targets:{fresh:3,review:2}, overrides:{}, sessions:[], active:null };
+let state;
+try { state = {...blank, ...JSON.parse(localStorage.getItem(key))}; } catch { state = {...blank}; }
+const app = document.querySelector("#app");
+const dialog = document.querySelector("#dialog");
+const notice = document.querySelector("#notice");
+let toastTimeout;
+let filters = {query:"", topic:"", difficulty:"", status:"", page:0};
+let mode = "dashboard";
+
+function esc(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
+}
+function flash(message) {
+  notice.textContent = message;
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => notice.textContent = "", 3800);
+}
+function save() {
+  try { localStorage.setItem(key, JSON.stringify(state)); }
+  catch { flash("Browser storage is unavailable. Keep this tab open to retain this session."); }
+}
+function day(offset=0) {
+  const now = new Date();
+  now.setDate(now.getDate() + offset);
+  return [now.getFullYear(), String(now.getMonth()+1).padStart(2,"0"), String(now.getDate()).padStart(2,"0")].join("-");
+}
+function dayLabel(value) {
+  return new Date(value + "T12:00:00").toLocaleDateString(undefined,{month:"short",day:"numeric"});
+}
+const record = id => state.records[id] ?? {status:0};
+const targets = () => state.overrides[day()] ?? state.targets;
+const due = () => rows.filter(q => record(q.id).due && record(q.id).due <= day()).sort((a,b)=>record(a.id).due.localeCompare(record(b.id).due));
+const completed = list => list.filter(q=>record(q.id).status===2).length;
+const log = (type,id) => {
+  const today = state.activity[day()] ??= {fresh:[],review:[]};
+  if (!today[type].includes(id)) today[type].push(id);
+};
+
+function setStatus(id, status) {
+  const old = record(id);
+  if (old.status === status) return;
+  const next = {status, everSolved:old.everSolved || status===2};
+  if (status===2) {
+    next.stage = old.stage ?? 0;
+    next.due = old.due ?? day(1);
+    if (!old.everSolved) log("fresh",id);
+  }
+  if (status===3) { next.stage = 0; next.due = day(); }
+  state.records[id] = next;
+  save();
+}
+function review(id, remembered) {
+  const old = record(id);
+  const stage = remembered ? Math.min((old.stage??0)+1,4) : 0;
+  const couldCount = old.due && old.due <= day();
+  state.records[id] = {status:remembered?2:3,everSolved:old.everSolved||remembered,stage,due:day([1,3,7,14,30][stage])};
+  if (couldCount) log("review",id);
+  save();
+}
+function options(values, selected) {
+  return values.map(([val,label])=>'<option value="'+esc(val)+'"'+(String(val)===String(selected)?' selected':'')+'>'+esc(label)+'</option>').join("");
+}
+function bar(value,max,label) {
+  const pct = max ? Math.min(100,Math.round(100*value/max)) : 0;
+  return '<div class="bar" role="progressbar" aria-label="'+esc(label)+'" aria-valuenow="'+pct+'"><i style="width:'+pct+'%"></i></div>';
+}
+const empty = text => '<p class="empty">'+esc(text)+'</p>';
+const heading = (title, sub) => '<h1>'+title+'</h1><p class="sub">'+sub+'</p>';
+const metric = (label,value,sub) => '<div class="metric"><span>'+label+'</span><b>'+value+'</b><span>'+sub+'</span></div>';
+const link = q => '<a href="'+esc(q.url)+'" target="_blank" rel="noopener" title="'+(questionLinks[q.title]?'Open on LeetCode':'Find this problem on takeUforward')+'">'+esc(q.title)+'</a>';
+function question(q, context) {
+  const r=record(q.id);
+  const controls = context==="revision"
+    ? '<button data-review="'+q.id+'" data-pass="true">Recalled</button><button data-review="'+q.id+'">Retry tomorrow</button>'
+    : '<select data-status="'+q.id+'" aria-label="Status for '+esc(q.title)+'">'+options(statusNames.map((s,i)=>[i,s]),r.status)+'</select>';
+  const result = context==="session" ? '<label class="muted">Outcome <select data-result="'+q.id+'" aria-label="Set outcome for '+esc(q.title)+'">'+options([["","Unmarked"],["attempted","Attempted"],["solved","Solved"],["review","Needs revision"]],state.active.results[q.id]??"")+'</select></label>' : controls;
+  return '<div class="row"><div class="grow">'+link(q)+'<small>'+esc(q.topic)+' · '+esc(q.section)+(context==="revision"?' · Due '+dayLabel(r.due):'')+'</small></div><span class="tag '+q.difficulty.toLowerCase()+'">'+q.difficulty+'</span>'+result+'<button data-note="'+q.id+'" aria-label="Log mistake for '+esc(q.title)+'">Log</button></div>';
+}
+function planQueue() {
+  const groups = TOPICS.map(topic=>rows.filter(q=>q.topic===topic && record(q.id).status<2));
+  return groups.flat().filter(q => !state.activity[day()]?.fresh.includes(q.id));
+}
+function dashboard() {
+  const today=state.activity[day()]??{fresh:[],review:[]};
+  const target=targets(), reviews=due(), solved=completed(rows);
+  const upcoming=planQueue().slice(0,Math.max(0,target.fresh-today.fresh.length));
+  const current=upcoming[0]?.topic ?? planQueue()[0]?.topic;
+  const chart=Array.from({length:7},(_,i)=>{const d=day(i-6), a=state.activity[d]; return [d,(a?.fresh.length??0)+(a?.review.length??0)];});
+  const peak=Math.max(1,...chart.map(x=>x[1]));
+  const roadmap=[
+    ["Foundation","Foundations, sorting, arrays, hashing, binary search and basic strings."],
+    ["Core patterns","Linked lists, recursion, bits, stacks, queues, sliding windows, heaps and greedy."],
+    ["Advanced patterns","Trees, BSTs, graphs, dynamic programming, tries, string algorithms and maths."],
+    ["Assessment mode","Run mixed sets. Then explain the invariant, complexity and edge cases aloud."]
+  ];
+  return '<section class="hero"><div><p class="eyebrow">STRIVER A2Z STUDY PLAN</p><h1>Ready to practice, Naksh?</h1><p class="sub">Cover the sheet, revisit weak problems, and build speed for internship assessments.</p></div><a class="button primary" href="#practice">Timed practice</a></section>'+
+    '<div class="stats">'+metric("Sheet progress",solved+' <small>/ '+rows.length+'</small>',Math.round(100*solved/rows.length)+"% solved")+metric("Daily solves",today.fresh.length+' <small>/ '+target.fresh+'</small>',"First-time solves today")+metric("Revision due",reviews.length,"Ready to reattempt")+metric("Timed sets",state.sessions.length,"Finished sessions")+'</div>'+
+    '<div class="split"><section class="card"><div class="top"><h2>Today’s plan</h2><button data-target="today">Adjust today</button></div><p class="sub">'+(current?'Current focus: '+esc(current):'All topics cleared')+'</p>'+bar(today.fresh.length,target.fresh,"Daily first-time solve target")+
+    '<div class="rows plan">'+(upcoming.length?upcoming.slice(0,5).map(q=>'<div class="row"><span class="grow">'+link(q)+'</span><button data-open-topic="'+esc(q.topic)+'">Track</button></div>').join(""):empty("No new problems queued for today."))+'</div>'+
+    (upcoming.length>5?'<p class="muted">+'+(upcoming.length-5)+' more in today’s plan.</p>':'')+
+    '<div class="top section"><span class="muted">'+today.review.length+' / '+target.review+' revisions today · '+reviews.length+' due</span><a href="#revision">Review queue</a></div>'+bar(today.review.length,target.review,"Daily revision target")+'</section>'+
+    '<section class="card"><h2>Last 7 days</h2><p class="sub">First-time solves and due reviews completed</p><div class="charts">'+chart.map(([d,n])=>'<div><small>'+n+'</small><div class="track"><i style="height:'+Math.round(n/peak*100)+'%"></i></div><small>'+new Date(d+"T12:00:00").toLocaleDateString(undefined,{weekday:"short"})+'</small></div>').join("")+'</div><h3 class="section">Difficulty breakdown</h3>'+
+    ["Easy","Medium","Hard","Unrated"].map(d=>{const group=rows.filter(q=>q.difficulty===d);return '<div class="top"><span class="tag '+d.toLowerCase()+'">'+d+'</span><span class="muted">'+completed(group)+' / '+group.length+'</span></div>'+bar(completed(group),group.length,d+" solved");}).join("")+'</section></div>'+
+    '<div class="split"><section class="card"><h2>Topic coverage</h2><div class="rows">'+TOPICS.map(t=>{const group=rows.filter(q=>q.topic===t);return '<div class="row"><button class="link grow" data-open-topic="'+esc(t)+'">'+esc(t)+'</button><span class="muted count">'+completed(group)+' / '+group.length+'</span></div>';}).join("")+'</div></section><section class="card"><h2>Interview roadmap</h2><div class="rows">'+roadmap.map(([title,summary])=>'<div class="row"><div><h3>'+title+'</h3><p class="sub">'+summary+'</p></div></div>').join("")+'</div></section></div>';
+}
+function catalog() {
+  return heading("Problem Sheet","Work through the A2Z topics and record your progress.")+
+  '<div class="filters"><input type="search" id="query" aria-label="Search problems" placeholder="Search problems or patterns" value="'+esc(filters.query)+'"><select id="topic" aria-label="Topic">'+options([["","All topics"],...TOPICS.map(x=>[x,x])],filters.topic)+'</select><select id="difficulty" aria-label="Difficulty">'+options([["","All difficulties"],...["Easy","Medium","Hard","Unrated"].map(x=>[x,x])],filters.difficulty)+'</select><select id="status" aria-label="Problem status">'+options([["","All statuses"],...statusNames.map((x,i)=>[i,x])],filters.status)+'</select></div><div class="card" id="results"></div>'+
+  '<p class="footer">Classic 455-item A2Z outline with six supplemental Maths and Hashing drills. Difficulty follows the outline’s section when available. Unrated items have no assigned band. Links without a mapped problem page open a search. <a href="'+official+'" target="_blank" rel="noopener">Current official sheet</a></p>';
+}
+function showResults() {
+  const query=filters.query.trim().toLowerCase();
+  const list=rows.filter(q=>(!filters.topic||q.topic===filters.topic)&&(!filters.difficulty||q.difficulty===filters.difficulty)&&(!filters.status||String(record(q.id).status)===filters.status)&&(!query||[q.title,q.topic,q.section].some(x=>x.toLowerCase().includes(query))));
+  const size=20, last=Math.max(0,Math.ceil(list.length/size)-1);
+  filters.page=Math.min(filters.page,last);
+  document.querySelector("#results").innerHTML='<div class="top"><h2>'+esc(filters.topic||"All problems")+'</h2><span class="muted">'+list.length+' items</span></div><div class="rows">'+(list.slice(filters.page*size,filters.page*size+size).map(q=>question(q)).join("")||empty("No problems match. Try changing the search or filters."))+'</div>'+
+  (last?'<div class="top pagination"><button data-page="-1" '+(!filters.page?'disabled':'')+'>Previous</button><span class="muted">Page '+(filters.page+1)+' of '+(last+1)+'</span><button data-page="1" '+(filters.page===last?'disabled':'')+'>Next</button></div>':'');
+}
+function revision() {
+  const list=due();
+  const upcoming=rows.filter(q=>record(q.id).due>day()).sort((a,b)=>record(a.id).due.localeCompare(record(b.id).due));
+  return heading("Revision Queue","Re-solve from memory. Successful reviews move through 1, 3, 7, 14 and 30-day intervals.")+
+    '<section class="card section"><h2>Due now · '+list.length+'</h2><div class="rows">'+(list.map(q=>question(q,"revision")).join("")||empty("Nothing due. Mark a problem Solved to schedule a review tomorrow, or Needs revision to put it here now."))+'</div></section>'+
+    '<section class="card section"><h2>Upcoming · '+upcoming.length+'</h2><div class="rows">'+(upcoming.map(q=>'<div class="row"><div class="grow">'+link(q)+'<small>'+esc(q.topic)+'</small></div><span class="muted">'+dayLabel(record(q.id).due)+'</span></div>').join("")||empty("Future reviews will appear here."))+'</div></section>';
+}
+function practice() {
+  const active=state.active;
+  const history=state.sessions.slice().reverse();
+  return heading("Timed Practice","Simulate an online assessment. Solve on the linked platform and record each result here.")+
+    '<section class="card section">'+(active?
+      '<div class="top"><div><h2>Assessment in progress</h2><p class="sub">'+active.ids.length+' problems · '+active.minutes+' minutes</p></div><div class="timer" id="timer" aria-label="Time remaining"></div></div><div class="rows">'+active.ids.map(i=>question(rows[i],"session")).join("")+'</div><div class="top section"><span class="muted">Unmarked problems remain unchanged when the set ends.</span><button class="primary" data-finish>Finish set</button></div>':
+      '<h2>Build a practice set</h2><form class="form" id="practice-form"><label>Topic<select name="topic">'+options([["","Mixed topics"],...TOPICS.map(t=>[t,t])],"")+'</select></label><label>Difficulty<select name="difficulty">'+options([["","Any difficulty"],...["Easy","Medium","Hard","Unrated"].map(d=>[d,d])],"")+'</select></label><label>Questions<input name="count" type="number" min="1" max="10" value="3" required></label><label>Minutes<input name="minutes" type="number" min="1" max="180" value="60" required></label><button class="primary">Start timer</button></form><p class="muted">Mixed sets spread questions across topics and prioritize unsolved problems.</p>')+'</section>'+
+    '<section class="card section"><h2>Set history</h2><div class="rows">'+(history.map(s=>'<details class="row"><summary>'+dayLabel(s.date)+' · '+s.solved+'/'+s.ids.length+' solved · '+Math.round(s.elapsed/60)+' min'+(s.expired?' · Time expired':'')+'</summary><div class="rows">'+s.ids.map(i=>'<div class="row"><div class="grow">'+link(rows[i])+'</div><span class="muted">'+esc(({solved:"Solved",attempted:"Attempted",review:"Needs revision"})[s.results[i]]||"Unmarked")+'</span></div>').join("")+'</div></details>').join("")||empty("Completed assessments will appear here."))+'</div></section>';
+}
+const categories=["Pattern recognition","Edge case","Implementation","Complexity","Time management"];
+function mistakes() {
+  return heading("Mistake Log","Record what went wrong and what you’ll do differently on the next attempt.")+
+    '<section class="card section"><div class="top"><h2>Entries · '+state.notes.length+'</h2><button class="primary" data-note="">Add mistake</button></div>'+
+    '<div class="rows">'+(state.notes.slice().reverse().map(n=>'<div class="row"><div class="grow"><h3>'+link(rows[n.question])+'</h3><small>'+esc(n.category)+' · '+dayLabel(n.date)+'</small><p class="sub note">'+esc(n.note)+'</p></div><button data-edit="'+esc(n.id)+'">Edit</button></div>').join("")||empty("No mistakes logged yet. Use Log next to any problem to capture a lesson."))+'</div></section>';
+}
+function settings() {
+  return heading("Practice Settings","Set a default pace for the semester and override it on busy days.")+
+    '<section class="card section"><div class="top"><h2>Daily targets</h2><button data-target="default">Edit defaults</button></div><p class="sub">Default: '+state.targets.fresh+' first-time solves · '+state.targets.review+' reviews</p><p class="sub">Today: '+targets().fresh+' first-time solves · '+targets().review+' reviews</p><div class="form"><button data-target="today">Adjust today</button>'+(state.overrides[day()]?'<button data-reset-target>Use defaults today</button>':'')+'</div></section><p class="footer">Progress, notes and practice history are saved in this browser.</p>';
+}
+function render() {
+  const route=location.hash.slice(1);
+  mode=Object.hasOwn(screens,route)?route:"dashboard";
+  document.querySelector("#crumb").textContent=screens[mode];
+  document.querySelector("#date").textContent=new Date().toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});
+  document.querySelectorAll("nav a").forEach(a=>{if(a.hash==="#"+mode)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
+  app.innerHTML={dashboard,catalog,revision,practice,mistakes,settings,sheet:catalog}[mode]();
+  if(mode==="sheet")showResults();
+  updateTimer();
+}
+function tick() {
+  const active=state.active;
+  if(!active)return;
+  if(Date.now()>=active.end){finish(true);return;}
+  updateTimer();
+}
+function updateTimer() {
+  const timer=document.querySelector("#timer");
+  if(!timer||!state.active)return;
+  const seconds=Math.max(0,Math.ceil((state.active.end-Date.now())/1000));
+  timer.textContent=Math.floor(seconds/60)+":"+String(seconds%60).padStart(2,"0");
+}
+function finish(expired) {
+  const active=state.active;
+  if(!active)return;
+  const marks={attempted:1,solved:2,review:3};
+  for(const [id,outcome] of Object.entries(active.results)){
+    if(outcome==="attempted" && record(id).status>=2)continue;
+    if(marks[outcome])setStatus(+id,marks[outcome]);
+  }
+  const solved=Object.values(active.results).filter(x=>x==="solved").length;
+  state.sessions.push({...active,solved,expired,date:day(),elapsed:Math.round((Math.min(Date.now(),active.end)-active.start)/1000)});
+  state.active=null;
+  save();render();flash((expired?"Time expired. ":"Set saved. ")+solved+"/"+active.ids.length+" solved.");
+}
+function startSet(data) {
+  const topic=data.get("topic"), difficulty=data.get("difficulty"), count=Number(data.get("count")), minutes=Number(data.get("minutes"));
+  const pool=rows.filter(q=>(!topic||q.topic===topic)&&(!difficulty||q.difficulty===difficulty))
+    .map(q=>({q,score:(record(q.id).status===2?1:0)+Math.random()})).sort((a,b)=>a.score-b.score).map(item=>item.q);
+  if(pool.length<count){flash("Only "+pool.length+" questions match. Reduce the count or change the filters.");return;}
+  const picks=[], used=new Set();
+  for(const q of pool){if(picks.length===count)break;if(!topic&&used.has(q.topic))continue;picks.push(q);used.add(q.topic);}
+  for(const q of pool){if(picks.length===count)break;if(!picks.includes(q))picks.push(q);}
+  const start=Date.now();
+  state.active={ids:picks.map(q=>q.id),results:{},start,end:start+minutes*60000,minutes};
+  save();render();
+}
+function openTargets(kind) {
+  const t=kind==="today"?targets():state.targets;
+  dialog.innerHTML='<form id="targets-form" data-kind="'+kind+'"><h2>'+(kind==="today"?"Today’s targets":"Default daily targets")+'</h2>'+
+    '<label>First-time solves<input type="number" min="0" max="50" name="fresh" value="'+t.fresh+'" required></label><label>Due reviews<input type="number" min="0" max="50" name="review" value="'+t.review+'" required></label>'+
+    '<div class="top"><button type="button" data-close>Cancel</button><button class="primary">Save targets</button></div></form>';
+  dialog.showModal();
+}
+function openNote(questionId, entry) {
+  dialog.innerHTML='<form id="note-form" data-id="'+esc(entry?.id??"")+'"><h2>'+(entry?"Edit mistake":"Log a mistake")+'</h2>'+
+    '<label>Problem<select required name="question">'+options([["","Select a problem"],...rows.map(q=>[q.id,q.topic+" · "+q.title])],entry?.question??questionId)+'</select></label>'+
+    '<label>Category<select name="category">'+options(categories.map(c=>[c,c]),entry?.category??categories[0])+'</select></label>'+
+    '<label>What happened and what will you change?<textarea required name="note" maxlength="3000" placeholder="I missed… Next time I’ll…">'+esc(entry?.note)+'</textarea></label>'+
+    '<label><span><input name="schedule" type="checkbox" '+(entry?"":"checked")+'> Add to today’s revision queue</span></label><div class="top"><button type="button" data-close>Cancel</button><button class="primary">Save mistake</button></div></form>';
+  dialog.showModal();
+}
+document.addEventListener("click",event=>{
+  const button=event.target.closest("button");
+  if(!button)return;
+  const d=button.dataset;
+  if("close" in d){dialog.close();return;}
+  if("target" in d){openTargets(d.target);return;}
+  if("note" in d){openNote(d.note);return;}
+  if("edit" in d){openNote("",state.notes.find(n=>n.id===d.edit));return;}
+  if("resetTarget" in d){delete state.overrides[day()];save();render();return;}
+  if("openTopic" in d){
+    filters={query:"",topic:d.openTopic,difficulty:"",status:"",page:0};
+    if(mode==="sheet")render();else location.hash="sheet";
+    return;
+  }
+  if("page" in d){filters.page+=Number(d.page);showResults();document.querySelector("#results").scrollIntoView({block:"start"});return;}
+  if("review" in d){review(+d.review,d.pass==="true");render();flash(d.pass?"Review recorded. Next interval scheduled.":"Scheduled for tomorrow.");return;}
+  if("finish" in d)finish(Date.now()>=state.active.end);
+});
+document.addEventListener("input",event=>{
+  if(event.target.id==="query"){filters.query=event.target.value;filters.page=0;showResults();}
+});
+document.addEventListener("change",event=>{
+  const el=event.target;
+  if(["topic","difficulty","status"].includes(el.id)){filters[el.id]=el.value;filters.page=0;showResults();}
+  if("status" in el.dataset){setStatus(+el.dataset.status,+el.value);if(filters.status)showResults();flash("Problem status updated.");}
+  if("result" in el.dataset && state.active){
+    if(Date.now()>=state.active.end){finish(true);return;}
+    state.active.results[el.dataset.result]=el.value;save();
+  }
+});
+document.addEventListener("submit",event=>{
+  event.preventDefault();
+  const form=event.target,data=new FormData(form);
+  if(form.id==="practice-form"){startSet(data);return;}
+  if(form.id==="targets-form"){
+    const t={fresh:+data.get("fresh"),review:+data.get("review")};
+    if(form.dataset.kind==="today")state.overrides[day()]=t;else state.targets=t;
+  }
+  if(form.id==="note-form"){
+    const note=data.get("note").trim();
+    if(!note){flash("Enter a short note before saving.");return;}
+    const index=state.notes.findIndex(n=>n.id===form.dataset.id);
+    const entry={id:form.dataset.id||crypto.randomUUID(),date:index<0?day():state.notes[index].date,question:+data.get("question"),category:data.get("category"),note};
+    if(index<0)state.notes.push(entry);else state.notes[index]=entry;
+    if(data.has("schedule")){
+      const r=record(entry.question);
+      state.records[entry.question]={status:3,everSolved:r.everSolved,stage:0,due:day()};
+    }
+  }
+  dialog.close();save();render();flash(form.id==="note-form"?"Mistake saved.":"Targets updated.");
+});
+window.addEventListener("hashchange",()=>{render();window.scrollTo(0,0);});
+render();
+tick();
+setInterval(tick,250);
+</script></body></html>
